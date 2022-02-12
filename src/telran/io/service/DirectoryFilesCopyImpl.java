@@ -11,6 +11,8 @@ import java.time.temporal.ChronoUnit;
 //IlyaL_38HW
 import telran.view.InputOutput;
 
+// V.R. OK
+
 public class DirectoryFilesCopyImpl implements DirectoryFilesCopy {
 	InputOutput io;
 	int maxDeth;
@@ -53,6 +55,9 @@ public class DirectoryFilesCopyImpl implements DirectoryFilesCopy {
 			int nBytesRecord;
 			while((nBytesRecord = inputStream.read(buffer)) > 0) {
 				outputStream.write(buffer, 0, nBytesRecord);
+				/* V.R. Don't forget to use
+				 *  totalBytes += nBytesRecord;
+				 */
 				totalBytes = totalBytes+nBytesRecord;
 			} 
 			inputStream.close();
