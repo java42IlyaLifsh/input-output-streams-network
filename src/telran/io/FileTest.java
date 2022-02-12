@@ -37,12 +37,23 @@ class FileTest {
 //		  dir2: dir
 //		  file1.txt: file
 		
+		System.out.println("*****************************************************");
+		File nodeDirC = new File("C:/");
+		int deep = 10;
+		String tabStr = "___";
+		int tabVal = 1;
+		Arrays.stream(nodeDirC.listFiles()).forEach(n -> System.out.printf(tabStr.repeat(tabVal)+"  %s: %s\n"
+				,n.getName(), n.isDirectory() ? "dir" : "file"));
+		
 		
 		
 	}
+	
+	
+	
 	@Test
 	void copyTest() throws IOException {
-		InputStream is = new FileInputStream("srcFile.txt");
+		InputStream is = new FileInputStream("C:/srcFile.txt");
 		File destFile = new File("destFile.txt");
 		System.out.printf("file %s exists : %s\n", destFile.getName(), destFile.exists());
 		OutputStream os = new FileOutputStream(destFile);
